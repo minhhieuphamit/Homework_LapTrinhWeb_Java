@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vn" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="_Layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<div layout:fragment="content" class="container body-content">
+    <form th:action="@{/course/create}" method="post" class="form">
+        <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="date" class="form-control" id="startDate" name="startDate" placeholder="Enter start date">
+        </div>
+        <div class="form-group">
+            <label for="lectureName">Lecture Name</label>
+            <input type="text" class="form-control" id="lectureName" name="lectureName"
+                   placeholder="Enter lecture name">
+        </div>
+        <div class="form-group">
+            <label for="place">Place</label>
+            <input type="text" class="form-control" id="place" name="place" placeholder="Enter place">
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top: 10px">Submit</button>
+    </form>
+</div>
+</body>
+</html>
