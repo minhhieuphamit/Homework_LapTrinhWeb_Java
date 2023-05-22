@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vn" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{_Layout.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+<div layout:fragment="content" class="row">
+    <ul class="course">
+        <li th:each="course : ${courses}">
+            <div class="date">
+                <div class="month">
+                    <span th:text="${#temporals.format(course.startDate, 'dd')}"></span>
+                </div>
+                <div class="day">
+                    <span th:text="${#temporals.format(course.startDate, 'MMM')}"></span>
+                </div>
+                <div class="year">
+                    <span th:text="${#temporals.format(course.startDate, 'yyyy')}"></span>
+                </div>
+            </div>
+            <div class="course-info">
+                <span class="lecture">
+                    <span th:text="${course.lectureName}"></span>
+                </span>
+                <span class="place">
+                    <span th:text="${course.place}"></span>
+                </span>
+            </div>
+            <div class="course-action mt-2">
+                <a class="btn btn-primary" th:href="@{/course/edit/{id}(id=${course.id})}">Edit</a>
+                <a class="btn btn-danger" th:href="@{/course/delete/{id}(id=${course.id})}">Delete</a>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
