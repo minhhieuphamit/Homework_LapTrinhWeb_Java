@@ -17,7 +17,7 @@ public class CourseController {
 
     @GetMapping("/create")
     public String create(Model model) {
-        model.addAttribute("course", courseService.getAll());
+        model.addAttribute("course", new Course());
         return "create";
     }
 
