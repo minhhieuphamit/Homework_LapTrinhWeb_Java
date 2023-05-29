@@ -46,7 +46,7 @@ public class BookController {
         return "redirect:/books";
     }
 
-    @GetMapping("/edit/{id}")
+    @GetMapping(" ")
     public String edit(@PathVariable("id") Long id, Model model) {
         Book book = bookService.getBookById(id);
         model.addAttribute("book", book);
